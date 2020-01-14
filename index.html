@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Logistmap</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuLSwLceo-aqnj5QcvDc8u3O9Nz4HTyPs"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <section id="app" class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-3">
+            <div style="height: 55rem;">
+              <label for="origin">Origin</label>
+              <div id="origin" class="field">
+                <div class="control">
+                  <input
+                    v-model="originLatLng"
+                    class="input is-primary"
+                    type="text"
+                    placeholder="Latitude,Logitude"
+                  />
+                </div>
+              </div>
+              <label for="destination">Destination</label>
+              <div id="destination" class="field">
+                <div class="control">
+                  <input
+                    v-model="destinationLatLng"
+                    class="input is-primary"
+                    type="text"
+                    placeholder="Latitude,Logitude"
+                  />
+                </div>
+              </div>
+              <div class="buttons">
+                <button @click="addRoute" class="button is-primary">Add</button>
+              </div>
+              <hr>
+              <label for=""></label>
+              <div v-for="l in locations">
+                  <div>{{l.origin}} to {{l.des}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-9">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>
