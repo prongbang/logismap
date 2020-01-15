@@ -49,9 +49,14 @@
                 <button @click="addRoute" class="button is-primary">Add</button>
               </div>
               <hr>
-              <label for=""></label>
-              <div v-for="l in locations">
-                  <div>{{l.origin}} to {{l.des}}</div>
+              <label for="">Distance & Duration</label>
+              <div v-for="r in directionRoutes">
+                  <div>
+                    <div>
+                      <span style="height: 10px;width: 50px;" :style="{background:`${r.color}`}">&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                      &nbsp; {{r.distance}} {{r.duration}}
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
