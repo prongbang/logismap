@@ -1,5 +1,9 @@
 # Logistmap
 
+### Screenshot
+
+![Preview](Screenshot.png)
+
 ### Restrict the API key
 
 - https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key
